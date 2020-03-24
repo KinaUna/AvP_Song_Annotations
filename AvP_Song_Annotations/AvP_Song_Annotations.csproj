@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>Audio.ico</ApplicationIcon>
+    <Authors>Per Rosing Mogensen</Authors>
+    <Company>Philipsborn Lab</Company>
+    <Description>Drosophila song pulse detection application.</Description>
+    <Copyright>Philipsborn Lab 2020</Copyright>
+    <PackageProjectUrl>https://philipsborn-lab.org</PackageProjectUrl>
+    <Version>0.1.0</Version>
+    <PackageIcon>audio.png</PackageIcon>
+    <PackageIconUrl />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\philipsborn_fly_720_cropped.png" />
+    <None Remove="philipsborn_fly_720.png" />
+    <None Include="..\..\..\..\AVP\App\audio.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\philipsborn_fly_720.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\philipsborn_fly_720_cropped.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Files\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NetMQ" Version="4.0.0.207" />
+  </ItemGroup>
+
+</Project>
