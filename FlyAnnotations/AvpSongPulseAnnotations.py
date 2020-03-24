@@ -80,13 +80,7 @@ except:
     print('No config file loaded, running with default values.')
     sys.stdout.flush()
 
-# if debug_mode == 0:
-#    warnings.filterwarnings("ignore")
 
-# sysout_file = output_folder + '\\logs\\stdout.txt'
-# if not os.path.exists(output_folder + '\\logs'):
-#     os.makedirs(output_folder + '\\logs')
-# sys.stdout = open(sysout_file, 'w')
 
 aat = AvpAudioTools(wav_folder, data_folder, output_folder, segment_length=segment_length, step_length=step_length,
                     clip_padding=clip_padding, pulse_padding=pulse_padding, img_n_fft=img_n_fft,
@@ -99,6 +93,4 @@ if run_training == 1:
 
 if run_predictions == 1:
     aat.run_predictions(predict_threshold)
-    # if run_extract_spectograms == 1:
-    #     aat.extract_spectographs()
-    # aat.predict_song_pulses(estimate_threshold=predict_threshold)
+    
